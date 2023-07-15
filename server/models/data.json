@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "name": "Shoe",
+        "price": 21,
+        "stock": 15,
+        "image": "Resources/images/shoe.jpeg"
+    },
+    {
+        "id": "2",
+        "name": "Cap",
+        "price": 10,
+        "stock": 8,
+        "image": "Resources/images/cap.jpeg"
+    },
+    {
+        "id": "3",
+        "name": "T-shirt",
+        "price": 15,
+        "stock": 17,
+        "image": "Resources/images/t-shirt.jpeg"
+    },
+    {
+        "id": "4",
+        "name": "Jeans",
+        "price": 13,
+        "stock": 12,
+        "image": "Resources/images/Jeans.jpeg"
+    }
+]
