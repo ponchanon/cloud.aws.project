@@ -11,18 +11,13 @@ const dynamodb = new AWS.DynamoDB();
 
 // Define the table name
 const docClient = new AWS.DynamoDB.DocumentClient();
-const tableName = "sc-users";
-// The primary key value to fetch
-const primaryKeyValue = 3;
-
-// Create the parameters object
-const params = {
-    TableName: tableName,
-};
 
 // Fetch the data from DynamoDB
-const fetchUser = (callback = () => {
+const fetchUser = (tableName = "sc-users", callback = () => {
 }) => {
+    const params = {
+        TableName: tableName,
+    };
     docClient.scan(params, function (err, data) {
         if (err) {
             console.error('Error fetching data:', err);

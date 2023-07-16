@@ -31,7 +31,10 @@ module.exports = class User {
         const userIndex = users.findIndex(s => s.username === this.username && s.password === this.password);
 
         const user = users[userIndex];
-
+        const userLoginLog = {
+            username: user.username,
+            logintime: new Date(),
+        };
 
         if (user) {
 
