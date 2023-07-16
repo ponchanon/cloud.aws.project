@@ -1,9 +1,12 @@
+const {configObject} = require("./credentials");
 //Considering static users DB
-let users = [
-    { id: 1, fullname:'Ponchanon Datta Rone', username: 'ponchanon', password: '615866', accessToken: '' },
-    { id: 2, fullname:'Moynul Islam', username: 'moynul', password: '616161', accessToken: '' },
-    { id: 3, fullname:'Admin User', username: 'admin', password: '1212', accessToken: '' }
-];
+// let users = [
+//     { id: 1, fullname:'Ponchanon Datta Rone', username: 'ponchanon', password: '615866', accessToken: '' },
+//     { id: 2, fullname:'Moynul Islam', username: 'moynul', password: '616161', accessToken: '' },
+//     { id: 3, fullname:'Admin User', username: 'admin', password: '1212', accessToken: '' }
+// ];
+
+let users = [];
 
 //Creating User Class
 module.exports = class User {
