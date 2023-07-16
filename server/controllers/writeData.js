@@ -24,6 +24,7 @@ const writeData = (tableName, itemData, callback = () => {
         };
         if (err) {
             console.error('Error writing data:', err);
+            callback(err);
         } else {
             callback(data);
             console.log('Data written successfully:', data);

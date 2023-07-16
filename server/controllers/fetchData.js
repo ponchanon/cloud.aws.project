@@ -13,7 +13,7 @@ const dynamodb = new AWS.DynamoDB();
 const docClient = new AWS.DynamoDB.DocumentClient();
 
 // Fetch the data from DynamoDB
-const fetchUser = (tableName = "sc-users", callback = () => {
+const fetchUser = (tableName, callback = () => {
 }) => {
     const params = {
         TableName: tableName,
