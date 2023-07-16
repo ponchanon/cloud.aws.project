@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "aws-sdk": "^2.1415.0",
+    "nodemon": "^3.0.1"
+  }
+}

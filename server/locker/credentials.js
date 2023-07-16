@@ -1,8 +1,8 @@
 const configObject = {
     region: "us-east-1",
     credentials: {
-        accessKeyId: "AKIAYZB73666ZYWHNHFQ",
-        secretAccessKey: "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",
+        accessKeyId: "AKIAYZB73666WOXL7LGJ",
+        secretAccessKey: "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",
     },
 };
 
