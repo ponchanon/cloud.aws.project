@@ -1,6 +1,6 @@
 //Considering static users DB
 
-const fetchUser = require("../controllers/fetchData");
+const fetchUser = require("../lib/fetchData");
 let users = [];
 
 fetchUser("sc-users", (data) => {

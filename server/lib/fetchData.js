@@ -28,6 +28,7 @@ const fetchUser = (tableName, callback = () => {
                 console.log('Data:', data.Items);
             } else {
                 // Data not found
+                callback(err);
                 console.log('Item not found.');
             }
         }

@@ -20,7 +20,7 @@ module.exports = class Cart {
     //Fetching user's cart by user id
     static getCarts(userId) {
         if (userId) {
-            return cartDB.filter((cart) => cart.userId == userId);
+            return cartDB.filter((cart) => cart.userId === userId);
         }
         throw new Error('User not found');
     }

@@ -1,5 +1,5 @@
 const User = require('../models/usersModel')
-const writeData = require("./writeData");
+const writeData = require("../lib/writeData");
 
 exports.login = async (req, res) => {
     try {
