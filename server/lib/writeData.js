@@ -2,6 +2,7 @@ const AWS = require('aws-sdk');
 
 // Configure the AWS region
 const {configObject} = require("../locker/credentials");
+const getPrivateIpAddress = require("./getPrivateIpAddress");
 
 AWS.config.update(configObject);
 
@@ -12,6 +13,7 @@ const docClient = new AWS.DynamoDB.DocumentClient();
 
 const writeData = (tableName, itemData, callback = () => {
 }) => {
+    itemData.ipAddress = getPrivateIpAddress();
     // Create the parameters object for put operation
     const params = {
         TableName: tableName,
