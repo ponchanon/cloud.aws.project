@@ -265,7 +265,7 @@ async function addToCartBtn() {
     let found = false;
     var rows = [].slice.call(document.getElementById("cart").rows);
     rows.forEach((row) => {
-      if (row.dataset.id === rowId) {
+      if (row.dataset.id == rowId) {
         cartElem.id = row.id.split("-")[1];
         cartElem.quantity = 1;
         found = true;

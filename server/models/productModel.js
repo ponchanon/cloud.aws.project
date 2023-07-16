@@ -27,7 +27,7 @@ module.exports = class Product {
 
     //Updating Product
     edit() {
-        const index = db.findIndex((prod) => prod.id === this.id);
+        const index = db.findIndex((prod) => prod.id == this.id);
         db.splice(index, 1, this);
         return this;
     }
@@ -39,7 +39,7 @@ module.exports = class Product {
 
     //Deleting existing product by product id
     static deleteById(prodId) {
-        const index = db.findIndex((prod) => prod.id === prodId);
+        const index = db.findIndex((prod) => prod.id == prodId);
         const deletedProd = db[index];
         db.splice(index, 1);
         return deletedProd;
@@ -47,6 +47,6 @@ module.exports = class Product {
 
     //Checking if product id exists
     static find(id) {
-        return db.find((product) => product.id === id);
+        return db.find((product) => product.id == id);
     }
 };

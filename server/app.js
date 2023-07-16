@@ -18,7 +18,7 @@ app.use(express.json());
 const verifyUserToken = (req, res, next) => {
   const auth = req.headers.authorization;
   const token = auth.split(" ")[1];
-  if (token === "null") {
+  if (token == "null") {
     res.json({ error: "No Access Token" });
   } else if (User.verifyToken(token)) {
     req.user = token.split("-")[0];

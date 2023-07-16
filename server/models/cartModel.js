@@ -20,7 +20,7 @@ module.exports = class Cart {
     //Fetching user's cart by user id
     static getCarts(userId) {
         if (userId) {
-            return cartDB.filter((cart) => cart.userId === userId);
+            return cartDB.filter((cart) => cart.userId == userId);
         }
         throw new Error('User not found');
     }
@@ -30,8 +30,7 @@ module.exports = class Cart {
         const product = Product.find(this.productId);
         if (product.stock <= 0) {
             throw new Error('Out of stock');
-        }
-        else {
+        } else {
             this.id = ++counter;
             cartDB.push(this);
             return cartDB.filter((cart) => cart.userId == this.userId);
@@ -49,12 +48,10 @@ module.exports = class Cart {
             if (cart.quantity > product.stock) {
                 cart.quantity -= parseInt(quantity);
                 throw new Error('Out of stock');
-            }
-            else if (cart.quantity <= 0) {
+            } else if (cart.quantity <= 0) {
                 cartDB = cartDB.filter(c => c.id != cart.id);
                 return cartDB.filter((c) => c.userId == cart.userId);
-            }
-            else {
+            } else {
                 cart.total = (cart.price * cart.quantity).toFixed(2);
                 cartDB.splice(ind, 1, cart);
                 return cartDB.filter((c) => c.userId == cart.userId);

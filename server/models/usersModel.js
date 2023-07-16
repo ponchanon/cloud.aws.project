@@ -28,7 +28,7 @@ module.exports = class User {
 
     login() {
 
-        const userIndex = users.findIndex(s => s.username === this.username && s.password === this.password);
+        const userIndex = users.findIndex(s => s.username == this.username && s.password == this.password);
 
         const user = users[userIndex];
 
@@ -50,7 +50,7 @@ module.exports = class User {
 
     static verifyToken(accessToken) {
 
-        return users.find(s => s.accessToken === accessToken);
+        return users.find(s => s.accessToken == accessToken);
 
     }
 
