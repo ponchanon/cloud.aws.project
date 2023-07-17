@@ -66,7 +66,7 @@ exports.placeOrder = (req, res) => {
 
         Cart.empty(user);
         if (req.query.action == 'cancel') {
-            return res.status(500).json({message: 'Order failed'});
+            return res.status(200).json({message: 'Order failed'});
         } else {
             return res.status(200).json({message: 'Order successfully placed'});
         }

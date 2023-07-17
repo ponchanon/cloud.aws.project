@@ -1,6 +1,7 @@
 //API END POINT
 //https://ponchanon.github.io/shopping.cart/server
-endPoint = `http://localhost:3000/`;
+// endPoint = `http://localhost:3000/`;
+endPoint = `http://44.211.238.90/`;
 //endPoint = `http://54.157.104.36:3000/`;
 
 
