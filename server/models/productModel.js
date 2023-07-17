@@ -1,10 +1,11 @@
 const fs = require("fs");
 const path = require("path");
 const fetchUser = require("../lib/fetchData");
+const {PRODUCTS} = require("../DB");
 
 let db = [];
 // Read the contents of the text file
-fetchUser('sc-products', (data) => {
+fetchUser(PRODUCTS, (data) => {
     db = data;
 });
 

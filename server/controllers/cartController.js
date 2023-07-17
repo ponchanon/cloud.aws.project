@@ -1,6 +1,7 @@
 const Cart = require("../models/cartModel");
 const Product = require("../models/productModel");
 const writeData = require("../lib/writeData");
+const {ORDERS} = require("../DB");
 
 exports.createCart = async (req, res) => {
     const user = req.user;
@@ -55,7 +56,7 @@ exports.placeOrder = (req, res) => {
         carts.forEach((cart) => {
             cart.userId = +cart.userId;
             cart.status = req.query.action;
-            writeData('sc-carts', cart, () => {
+            writeData(ORDERS, cart, () => {
                 const tempProduct = products.find(p => p.id == cart.productId);
                 const {id, name, price, stock, image} = tempProduct;
                 const product = new Product(id, name, price, image, stock - cart.quantity);
@@ -64,8 +65,11 @@ exports.placeOrder = (req, res) => {
         });
 
         Cart.empty(user);
-
-        return res.status(200).json({message: 'Order successfully placed'});
+        if (req.query.action == 'cancel') {
+            return res.status(500).json({message: 'Order failed'});
+        } else {
+            return res.status(200).json({message: 'Order successfully placed'});
+        }
 
     } catch (error) {
         res.status(400).json({error: error.message});

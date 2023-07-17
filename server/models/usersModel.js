@@ -1,9 +1,10 @@
 //Considering static users DB
 
 const fetchUser = require("../lib/fetchData");
+const {Users} = require("../DB");
 let users = [];
 
-fetchUser("sc-users", (data) => {
+fetchUser(Users, (data) => {
     users = data;
 })
 

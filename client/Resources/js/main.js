@@ -323,6 +323,6 @@ function cartsTable(carts) {
 
     document.getElementById(
         "placeOrder"
-    ).innerHTML = `<button type="button" class="btn btn-outline-primary" onclick=placeOrderCart('save')> Place Order</button>
+    ).innerHTML = `<button type="button" class="btn btn-outline-primary" onclick=placeOrderCart('success')> Place Order</button>
         <button type="button" class="btn btn-outline-danger" onclick=placeOrderCart('cancel')> Cancel Order</button>`;
 }

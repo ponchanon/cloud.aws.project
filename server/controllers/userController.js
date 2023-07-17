@@ -1,5 +1,6 @@
 const User = require('../models/usersModel')
 const writeData = require("../lib/writeData");
+const {USERLOGINLOGS} = require("../DB");
 
 exports.login = async (req, res) => {
     try {
@@ -18,13 +19,13 @@ exports.login = async (req, res) => {
             };
             if (user) {
                 userLoginLog.success = true;
-                writeData('sc-user-login-logs', userLoginLog, (data) => {
+                writeData(USERLOGINLOGS, userLoginLog, (data) => {
                     console.log("login log save successfully", data)
                 });
                 res.json({accessToken: user.accessToken, user: user.id});
             } else {
                 userLoginLog.success = false;
-                writeData('sc-user-login-logs', userLoginLog, (error) => {
+                writeData(USERLOGINLOGS, userLoginLog, (error) => {
                     console.log("login log save failed", error);
                 });
                 res.status(400).json({error: 'Invalid username or password!'});
