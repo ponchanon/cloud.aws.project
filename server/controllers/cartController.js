@@ -54,6 +54,7 @@ exports.placeOrder = (req, res) => {
 
         carts.forEach((cart) => {
             cart.userId = +cart.userId;
+            cart.status = req.query.action;
             writeData('sc-carts', cart, () => {
                 const tempProduct = products.find(p => p.id == cart.productId);
                 const {id, name, price, stock, image} = tempProduct;

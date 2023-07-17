@@ -1,3 +1,4 @@
+const os = require("os");
 const getPrivateIpAddress = () => {
     const networkInterfaces = os.networkInterfaces();
 
