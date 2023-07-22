@@ -41,4 +41,4 @@ app.use((error, req, res, next) => {
 });
 
 //Starting the server on port 3690
-app.listen(80, () => console.log("listen on 80"));
+app.listen(3000, () => console.log("listen on 80"));
